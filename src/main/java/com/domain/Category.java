@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.jpa.domain;
+package com.domain;
 
 import java.io.Serializable;
 

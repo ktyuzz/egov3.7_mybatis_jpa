@@ -13,10 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.jpa.repository;
+package com.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import com.jpa.domain.Category;
+import com.domain.Category;
 
 /**
  * 카테고리 데이터 처리를 위한 Repository 정의

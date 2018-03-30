@@ -10,7 +10,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.jpa.web;
+package com.web;
 
 import java.util.List;
 import javax.annotation.Resource;
@@ -24,8 +24,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
-import com.jpa.domain.Category;
-import com.jpa.service.EgovCategoryService;
+import com.domain.Category;
+import com.service.EgovCategoryService;
 
 /**
  * 카테고리 관련 웹요청을 관리하는 Controller 클래서 정의

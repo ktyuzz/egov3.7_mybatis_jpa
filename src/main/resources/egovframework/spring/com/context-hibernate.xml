@@ -20,9 +20,14 @@
 		<!-- persistence.xml 설정정보와 함께 사용가능 -->
 		<property name="jpaProperties">
 			<props>
+				<!-- <prop key="hibernate.ejb.naming_strategy">org.hibernate.cfg.EJB3NamingStrategy</prop> -->
+				<prop key="hibernate.ejb.naming_strategy">org.hibernate.cfg.ImprovedNamingStrategy</prop>
+				<!-- hibernate 5 버전에서의 세팅 (4 버전은 위에껄 사용)-
+				<prop key="hibernate.naming.implicit-strategy">org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl</prop>
+				<prop key="hibernate.naming.physical-strategy">org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl</prop> 
+				-->
 				<prop key="hibernate.hbm2ddl.auto">validate</prop>
 				<prop key="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</prop>
-				<prop key="hibernate.temp.use_jdbc_metadata_defaults">false</prop>
 				<prop key="hibernate.show_sql">true</prop>                
 				<prop key="hibernate.format_sql">true</prop>                
 				<prop key="hibernate.use_sql_comments">true</prop>         

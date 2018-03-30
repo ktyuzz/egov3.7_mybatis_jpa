@@ -13,10 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.jpa.service;
+package com.service;
 
 import java.util.List;
-import com.jpa.domain.Category;
+import com.domain.Category;
 
 /**
  * 카테고리 관련 업무 처리를 위한 Sevice Interface 정의
