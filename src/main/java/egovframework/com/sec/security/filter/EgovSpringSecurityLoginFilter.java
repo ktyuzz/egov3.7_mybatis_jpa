@@ -217,7 +217,7 @@ public class EgovSpringSecurityLoginFilter implements Filter {
 							//springSecurity.setContinueChainBeforeSuccessfulAuthentication(false);	// false 이면 chain 처리 되지 않음.. (filter가 아닌 경우 false로...)
 
 							LOGGER.debug("before security filter call....");
-							springSecurity.doFilter(new RequestWrapperForSecurity(httpRequest, loginVO.getUserSe() + loginVO.getId(), loginVO.getUniqId()), httpResponse, chain);
+							springSecurity.doFilter(new RequestWrapperForSecurity(httpRequest, loginVO.getId(), loginVO.getUniqId()), httpResponse, chain);
 							LOGGER.debug("after security filter call....");
 
 						} else {

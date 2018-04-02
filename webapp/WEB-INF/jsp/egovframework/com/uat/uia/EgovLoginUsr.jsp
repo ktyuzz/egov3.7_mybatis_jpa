@@ -170,7 +170,7 @@ function fnInit() {
     
     getid(document.loginForm);
     
-    fnLoginTypeSelect("typeGnr");
+    fnLoginTypeSelect("typeUsr");
     
     <c:if test="${not empty fn:trim(message) &&  message ne ''}">
     alert("${message}");    
@@ -223,13 +223,13 @@ function fnLoginTypeSelect(objName){
 			<c:set var="title"><spring:message code="comUatUia.loginForm.id"/></c:set>
 			<li>
 				<label for="id">${title}</label>
-				<input type="text" name="id" id="id" maxlength="10" title="${title} ${inputTxt}" placeholder="${title} ${inputTxt}" value="TEST1">
+				<input type="text" name="id" id="id" maxlength="10" title="${title} ${inputTxt}" placeholder="${title} ${inputTxt}" value="TEST1" onkeydown = "if (event.keyCode == 13){ actionLogin(); }" >
 			</li>
 			<!-- 비밀번호 -->
 			<c:set var="title"><spring:message code="comUatUia.loginForm.pw"/></c:set>
 			<li>
 				<label for="password">${title}</label>
-				<input type="password" name="password" id="password" maxlength="12" title="${title} ${inputTxt}" placeholder="${title} ${inputTxt}" value="rhdxhd12">
+				<input type="password" name="password" id="password" maxlength="12" title="${title} ${inputTxt}" placeholder="${title} ${inputTxt}" value="rhdxhd12" onkeydown = "if (event.keyCode == 13){ actionLogin(); }"  >
 			</li>
 			<!-- 아이디 저장 -->
 			<c:set var="title"><spring:message code="comUatUia.loginForm.idSave"/></c:set>
@@ -247,9 +247,19 @@ function fnLoginTypeSelect(objName){
 			</li>
 		</ul>
 	</div>
-	
 </fieldset>
-
+<div>
+	<table style="width: 200px; border: 1px solid black;border-collapse:collapse;">
+		<tr>
+			<td><h1 style="font-size: 2em;">아이디:</h1></td>
+			<td><h1 style="font-size: 2em;">TEST1</h1></td>
+		</tr>
+		<tr>
+			<td><h1 style="font-size: 2em;">비번:</h1></td>
+			<td><h1 style="font-size: 2em;">rhdxhd12</h1></td>
+		</tr>
+	</table>
+</div>
 <input name="userSe" type="hidden" value="GNR"/>
 <input name="j_username" type="hidden"/>
 </form>

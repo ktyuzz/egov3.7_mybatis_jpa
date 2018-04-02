@@ -26,6 +26,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import com.domain.Category;
 import com.service.EgovCategoryService;
+import egovframework.com.cmm.annotation.IncludedInfo;
 
 /**
  * 카테고리 관련 웹요청을 관리하는 Controller 클래서 정의
@@ -146,6 +147,7 @@ public class EgovCategoryController {
      * @return "com/jpa/egovCategoryList"
      * @throws Exception
      */
+    @IncludedInfo(name="카테고리관리", listUrl="/cgr/egovCategoryList.do", order = 3000,gid = 10)
     @RequestMapping(value = "/cgr/egovCategoryList.do")
     public String list(ModelMap model) throws Exception {
         List<Category> categories = categoryService.findAllCategories();

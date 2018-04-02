@@ -69,7 +69,13 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>${spring.maven.artifact.version}</version>
 		</dependency>
-
+<!--
+		<dependency>
+		    <groupId>org.springframework.data</groupId>
+		    <artifactId>spring-data-rest-webmvc</artifactId>
+		    <version>2.6.10.RELEASE</version>
+		</dependency>
+-->
 		<dependency>
 			<groupId>egovframework.rte</groupId>
 			<artifactId>egovframework.rte.fdl.idgnr</artifactId>
@@ -472,17 +478,17 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-core</artifactId>
-			<version>2.5.1</version>
+			<version>2.9.4</version>
 		</dependency>
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-annotations</artifactId>
-			<version>2.5.1</version>
+			<version>2.9.4</version>
 		</dependency>
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
-			<version>2.5.1</version>
+			<version>2.9.4</version>
 		</dependency>
 
 		<!-- LDAP조직도관리 관련 라이브러리 -->
@@ -511,12 +517,11 @@
 					<groupId>org.slf4j</groupId>
 					<artifactId>jcl-over-slf4j</artifactId>
 				</exclusion>
+				<!--<exclusion>
+					<groupId>org.springframework.data</groupId>
+					<artifactId>spring-data-commons</artifactId>
+				</exclusion>-->
 			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>org.codehaus.jackson</groupId>
-			<artifactId>jackson-mapper-asl</artifactId>
-			<version>1.9.2</version>
 		</dependency>
 
 		<dependency>
@@ -569,7 +574,18 @@
 	<build>
 		<defaultGoal>install</defaultGoal>
 		<directory>${basedir}/target</directory>
-		<finalName>egovframework-all-in-one</finalName>
+		<finalName>egov3.7_mybatis_jpa</finalName>
+		<sourceDirectory>${basedir}/src/main/java</sourceDirectory>
+		<outputDirectory>${basedir}/target/classes</outputDirectory>
+		<resources>
+			<resource>
+				<directory>${basedir}/src/main/resources</directory>
+			</resource>
+			<!-- <resource>
+				<directory>${basedir}/profile/${env}</directory>
+				<targetPath>${basedir}/target/classes</targetPath>
+			</resource> -->
+		</resources>
 		<pluginManagement>
 			<plugins>
 				<plugin>

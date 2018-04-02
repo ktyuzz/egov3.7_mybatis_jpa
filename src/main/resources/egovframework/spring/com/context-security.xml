@@ -32,7 +32,7 @@
 		jdbcUsersByUsernameQuery="SELECT USER_ID, ESNTL_ID AS PASSWORD, 1 ENABLED, USER_NM, USER_ZIP,
                                                               USER_ADRES, USER_EMAIL, USER_SE, ORGNZT_ID, ESNTL_ID,
                                                               (select a.ORGNZT_NM from COMTNORGNZTINFO a where a.ORGNZT_ID = m.ORGNZT_ID) ORGNZT_NM
-                                                       FROM COMVNUSERMASTER m WHERE CONCAT(USER_SE, USER_ID) = ?"
+                                                       FROM COMVNUSERMASTER m WHERE USER_ID = ?"
 		jdbcAuthoritiesByUsernameQuery="SELECT A.SCRTY_DTRMN_TRGET_ID USER_ID, A.AUTHOR_CODE AUTHORITY
                                                              FROM COMTNEMPLYRSCRTYESTBS A, COMVNUSERMASTER B
                                                              WHERE A.SCRTY_DTRMN_TRGET_ID = B.ESNTL_ID AND B.USER_ID = ?"
@@ -45,14 +45,14 @@
 		concurrentMaxSessons="1"
 		concurrentExpiredUrl="/EgovContent.do"
 
-		defaultTargetUrl="/EgovContent.do"
+		defaultTargetUrl="" 
 		
 		sniff="true"
 		xframeOptions="SAMEORIGIN" 
 		xssProtection="true" 
 		csrf="false"
 	/>
-
+	<!-- defaultTargetUrl="/EgovContent.do" -->
 	<egov-security:secured-object-config id="securedObjectConfig"
 		sqlHierarchicalRoles="
 			SELECT a.CHLDRN_ROLE child, a.PARNTS_ROLE parent

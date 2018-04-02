@@ -35,4 +35,7 @@
 	
 	<!-- @Transactional 어노테이션 사용한 콤포넌트의 경우 트랜잭션을 적용시킨다. 해당 콤포넌트 스캔 -->
 	<tx:annotation-driven transaction-manager="transactionManager" />
+	
+	<!-- JPA 예외를 스프링 예외로 변환 -->
+	<bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
 </beans>
