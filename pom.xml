@@ -66,16 +66,16 @@
 			<artifactId>mybatis</artifactId> <version>3.1.1</version> </dependency> -->
 		<dependency>
 			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.maven.artifact.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
 			<version>${spring.maven.artifact.version}</version>
 		</dependency>
-<!--
-		<dependency>
-		    <groupId>org.springframework.data</groupId>
-		    <artifactId>spring-data-rest-webmvc</artifactId>
-		    <version>2.6.10.RELEASE</version>
-		</dependency>
--->
+		
 		<dependency>
 			<groupId>egovframework.rte</groupId>
 			<artifactId>egovframework.rte.fdl.idgnr</artifactId>
@@ -143,7 +143,7 @@
 		<dependency>
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-jpa</artifactId>
-			<version>1.2.0.RELEASE</version>
+			<version>1.11.10.RELEASE</version>
 			<exclusions>
 				<exclusion>
 					<groupId>org.slf4j</groupId>
@@ -517,10 +517,10 @@
 					<groupId>org.slf4j</groupId>
 					<artifactId>jcl-over-slf4j</artifactId>
 				</exclusion>
-				<!--<exclusion>
+				<exclusion>
 					<groupId>org.springframework.data</groupId>
 					<artifactId>spring-data-commons</artifactId>
-				</exclusion>-->
+				</exclusion>
 			</exclusions>
 		</dependency>
 
@@ -565,17 +565,20 @@
 			<artifactId>slf4j-api</artifactId>
 			<version>1.7.25</version>
 		</dependency>
+		
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>jcl-over-slf4j</artifactId>
 			<version>1.7.25</version>
 		</dependency>
+		
 		<dependency>
 		    <groupId>org.projectlombok</groupId>
 		    <artifactId>lombok</artifactId>
 		    <version>1.16.20</version>
 		    <scope>provided</scope>
 		</dependency>
+		
 	</dependencies>
 	<build>
 		<defaultGoal>install</defaultGoal>
@@ -584,10 +587,6 @@
 		<sourceDirectory>${basedir}/src/main/java</sourceDirectory>
 		<outputDirectory>${basedir}/target/classes</outputDirectory>
 		<resources>
-		<!-- 	<resource>
-				<directory>${basedir}/webapp</directory>
-				<targetPath>${basedir}/</targetPath>
-			</resource> -->
 			<resource>
 				<directory>${basedir}/src/main/resources</directory>
 			</resource>
